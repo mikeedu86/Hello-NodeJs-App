@@ -1,5 +1,5 @@
 version: 2.1
 
-
-steps:
-- run: npm install
+jobs:
+  build:
+      - run: echo "hello"
