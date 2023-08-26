@@ -1,5 +1,19 @@
-#comment
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        # Install Google Cloud SDK
+        apt-get update
+        apt-get install -y google-cloud-sdk
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['auth', 'configure']  # Interactive configuration
+    
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['config', 'set', 'project', 'regal-unfolding-396612']
+
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
 
