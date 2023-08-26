@@ -1,0 +1,8 @@
+runtime: nodejs18 # Specify the Node.js runtime version
+
+handlers:
+  - url: /.*
+    script: auto # This will route all requests to your app's main script
+
+env_variables:
+  NODE_ENV: production # Set your desired environment variables here
